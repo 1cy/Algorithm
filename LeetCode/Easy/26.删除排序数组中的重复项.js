@@ -56,6 +56,15 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    
-};
+    if(!Array.isArray(nums)) return 0;
+    let length = nums.length;
+    let flag = 0;
+    for(let i = 1; i < length; i++ ){
+        if(nums[flag] != nums[i]){
+            nums[++flag] = nums[i];
+        }
+    }
+    nums.length = flag + 1;
+    return nums.length;
+}
 
